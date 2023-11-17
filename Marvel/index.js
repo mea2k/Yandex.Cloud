@@ -87,10 +87,8 @@ app.get('/api/characters', (req, res) => {
 	let data = undefined;
 	if (id) {
 		// получение информации о персонаже с ID
-		// const publicKey = process.env.MARVEL_PUBLIC_KEY || '';
-		// const privateKey = process.env.MARVEL_PRIVATE_KEY || '';
-		const publicKey = 'ef1d4ee536807d5476109f025e70f341';
-		const privateKey = '737722a0a6cf1faeb9b395a805998f669ddb4bcc';
+		const publicKey = process.env.MARVEL_PUBLIC_KEY || '';
+		const privateKey = process.env.MARVEL_PRIVATE_KEY || '';
 		const timestamp = new Date().getTime().toString();
 		const hash = md5(timestamp + privateKey + publicKey);
 
