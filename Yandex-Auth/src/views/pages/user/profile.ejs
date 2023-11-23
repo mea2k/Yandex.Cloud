@@ -1,0 +1,39 @@
+<%- include('../../layouts/header', {title}) %>
+
+
+<h1>
+    <%= title %>
+</h1>
+
+<% if(user) { %>
+<div class="row">
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-body">
+
+                <h5 class="card-title"><%= user.username %></h5>
+ 
+						<ol>
+						<% for(var key in Object.keys(user)) { %>
+							<ol><span><b>
+									<%= Object.keys(user)[key] %>
+								</b>:
+								</span>
+								<span>
+								<%= user[Object.keys(user)[key]] %>
+							</span>
+							</ol>
+						<% } %>
+					</ol>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<% } %>
+
+
+
+<%- include('../../layouts/footer') %>
+
